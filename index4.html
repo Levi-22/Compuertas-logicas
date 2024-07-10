@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Compuertas Lógicas</title>
+    <link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+    <div class="banner">
+        <img src="banner-unefa.jpg" alt="Banner UNEFA">
+    </div>
+    <h1>Compuertas Lógicas</h1>
+    <div class="controls">
+        <div class="switch">
+            <label>
+                <input type="checkbox" id="inputA" onchange="updateGates()">
+                <span>1</span>
+            </label>
+        </div>
+        <div class="switch">
+            <label>
+                <input type="checkbox" id="inputB" onchange="updateGates()">
+                <span>0</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="simulator">
+        <div class="column">
+            <div class="gate">
+                <span>NOT</span>
+                <img src="apagado.png" id="notALed" onclick="toggleLed('notALed')">
+                <button class="info" onclick="showTruthTable('not')">?</button>
+            </div>
+            <div class="gate">
+                <span>AND</span>
+                <img src="apagado.png" id="andGateLed" onclick="toggleLed('andGateLed')">
+                <button class="info" onclick="showTruthTable('and')">?</button>
+            </div>
+            <div class="gate">
+                <span>OR</span>
+                <img src="apagado.png" id="orGateLed" onclick="toggleLed('orGateLed')">
+                <button class="info" onclick="showTruthTable('or')">?</button>
+            </div>
+        </div>
+        <div class="column">
+            <div class="gate">
+                <span>NAND</span>
+                <img src="apagado.png" id="nandGateLed" onclick="toggleLed('nandGateLed')">
+                <button class="info" onclick="showTruthTable('nand')">?</button>
+            </div>
+            <div class="gate">
+                <span>NOR</span>
+                <img src="apagado.png" id="norGateLed" onclick="toggleLed('norGateLed')">
+                <button class="info" onclick="showTruthTable('nor')">?</button>
+            </div>
+            <div class="gate">
+                <span>XOR</span>
+                <img src="apagado.png" id="xorGateLed" onclick="toggleLed('xorGateLed')">
+                <button class="info" onclick="showTruthTable('xor')">?</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="truthTableModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <table id="truthTable">
+                <!-- La tabla de verdad se llenará dinámicamente -->
+            </table>
+        </div>
+    </div>
+
+    <script src="script4.js"></script>
+</body>
+</html>
